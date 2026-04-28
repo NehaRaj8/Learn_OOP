@@ -1,0 +1,4 @@
+patient_id,age,heart_rate,systolic_bp,condition
+1,70,110,150,diabetes
+2,45,80,120,healthy
+3,68,95,160,chronic
