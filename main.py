@@ -3,7 +3,6 @@ from src.risk_model import RiskModel
 
 
 def main():
-    print("--- RUNNING VERSION 2.0 ---")
     manager = PatientManager("data/patients.csv")
     manager.load_data()
 
