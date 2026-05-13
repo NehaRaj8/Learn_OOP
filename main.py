@@ -30,9 +30,31 @@ def main():
         model = RiskModel()
 
         print(f"Loaded {len(patients)} patient(s)\n")
+        
+         # CREATE COUNTERS HERE
+        high_count = 0
+        medium_count = 0
+        low_count = 0
+        
+        for patient in patients[:5]:
+            score = model.calculate_risk(patient)
+            category = model.risk_category(score)
 
-        for patient in patients:
             display_patient_risk(patient, model)
+
+            if category == "High":
+              high_count += 1
+            elif category == "Medium":
+              medium_count += 1
+            else:
+              low_count += 1
+
+          # PRINT SUMMARY AFTER LOOP
+        print("SUMMARY")
+        print("=" * 30)
+        print(f"High Risk Patients   : {high_count}")
+        print(f"Medium Risk Patients : {medium_count}")
+        print(f"Low Risk Patients    : {low_count}")
 
     except FileNotFoundError:
         print(f"Error: Could not find file '{data_path}'")
